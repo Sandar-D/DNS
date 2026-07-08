@@ -7,6 +7,7 @@ When a DNS query is initiated, resolver on the local machine asked by the progra
    - Hosts file
    - Router cache
    - ISP cache
+
 If the DNS zone files aren't cached, [resolver](https://www.nslookup.io/learning/what-is-a-dns-resolver/) will then convert the name resolution requests from applications like web browsers into DNS request messages. 
 
 Local resolvers are aware only of your recursive resolvers which are configured in the /etc/resolv.conf file and the local resolver sends the DNS request messages to them. It'll ask if they know where to find the domain `touchsupport.com`, and at that point they'll take the request and start a recursive query from the first location they are aware of - root nameservers. 
