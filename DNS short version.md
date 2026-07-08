@@ -18,13 +18,11 @@ It'll ask if they know where to find the domain `example.com`, and at that point
 
 The root nameserver does not know the IP address associated with the requested domain. Its role is simply to direct the recursive resolver to the appropriate Top-Level Domain (TLD) nameserver based on the domain's extension. For example, when resolving `example.com`, the root nameserver responds with a referral to the `.com` TLD nameservers rather than the domain's DNS records.
 
-*TLD (Top Level Domain) Nameservers**: TLD nameservers store information for domain names that share a common domain extension. For example, a .com TLD nameserver contains information for all websites with a ".com" extension. TLD nameservers can be categorized into two main groups:
+**TLD (Top Level Domain) Nameservers**: TLD nameservers store information for domain names that share a common domain extension. For example, a .com TLD nameserver contains information for all websites with a ".com" extension. TLD nameservers can be categorized into two main groups:
   - Generic top-level domains (gTLDs): These are domain extensions that are not country-specific, such as .com, .org, .net, .edu, and .gov.
   - Country code top-level domains (ccTLDs): These include domain extensions specific to a country or state, such as .rs for Serbia.
 
-After receiving a response from a root nameserver, the recursive resolver sends a query to the corresponding TLD nameserver for the requested domain. The TLD nameserver does not have access to the A record of the domain we need but it is aware of which authority manages the DNS zone for that domain. 
-
-TLD (Top Level Domain) Nameservers: After receiving a response from a root nameserver, the recursive resolver sends a query to the appropriate TLD nameserver for the requested domain. The TLD nameserver does not store the domain's A record. Instead, it contains delegation information (NS records) that identifies the authoritative nameservers responsible for the domain's DNS zone. It responds by directing the recursive resolver to those authoritative nameservers, which host the domain's DNS records.
+After receiving a response from a root nameserver, the recursive resolver sends a query to the appropriate TLD nameserver for the requested domain. The TLD nameserver does not store the domain's A record. Instead, it contains delegation information (NS records) that identifies the authoritative nameservers responsible for the domain's DNS zone. It responds by directing the recursive resolver to those authoritative nameservers, which host the domain's DNS records.
 
 **Domain registrar**: A domain registrar is responsible for registering domain names and maintaining the domain's registration information. When a domain owner configures or changes the authoritative nameservers for a domain, the registrar updates the domain's delegation information, which is then published in the corresponding TLD zone. During normal DNS resolution, however, recursive resolvers do not contact the domain registrar.
 
