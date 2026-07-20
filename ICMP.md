@@ -3,6 +3,7 @@ The Internet Control Message Protocol (ICMP) is a network layer protocol used by
 The primary purpose of ICMP is for error reporting. When two devices connect over the Internet, the ICMP generates errors to share with the sending device in the event that any of the data did not get to its intended destination.
 
 A secondary use of ICMP protocol is to perform network diagnostics; the commonly used terminal utilities traceroute and ping both operate using ICMP:
+
 	- traceroute utility is used to display the [routing](https://www.cloudflare.com/learning/network-layer/what-is-routing/) path between two Internet devices. The routing path is the actual physical path of connected routers that a request must pass through before it reaches its destination. The journey between one router and another is known as a ‘hop,’ and a traceroute also reports the time required for each hop along the way.
 	- ping utility is a simplified version of traceroute. A ping will test the speed of the connection between two devices and report exactly how long it takes a packet of data to reach its destination and come back to the sender’s device. Although ping does not provide data about routing or hops, it is still a very useful metric for gauging the [latency](https://www.cloudflare.com/learning/performance/glossary/what-is-latency/) between two devices.
 
